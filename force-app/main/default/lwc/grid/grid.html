@@ -1,0 +1,41 @@
+<template>
+  <lightning-card title="Contacts">
+      <!-- Header -->
+      <div class="header">
+          <lightning-button label="Add New Contact" variant="neutral" onclick={handleNewContact}></lightning-button>
+          <lightning-button label="Refresh" variant="neutral" onclick={handleRefresh}></lightning-button>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+          <lightning-input
+              type="search"
+              label="Search for contacts"
+              placeholder="Search by name"
+              onchange={handleSearch}>
+          </lightning-input>
+      </div>
+
+      <!-- Contact List -->
+      <div class="contacts-list">
+          <template if:true={filteredContacts}>
+              <template for:each={filteredContacts} for:item="contact">
+                  <p key={contact.Id} class="contact-item">
+                      <!-- Hyperlink for Contact Name -->
+                      <a href={contact.url} target="_blank">
+                          <strong>{contact.Name}</strong>
+                      </a><br />
+                      Account: {contact.AccountId}<br />
+                      Assistant: {contact.AssistantName}<br />
+                      Email: {contact.Email}
+                  </p>
+              </template>
+          </template>
+
+          <!-- No Contacts Message -->
+          <template if:false={filteredContacts}>
+              <p class="no-contacts">No contacts available</p>
+          </template>
+      </div>
+  </lightning-card>
+</template>

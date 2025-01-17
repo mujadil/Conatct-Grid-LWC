@@ -1,0 +1,51 @@
+/* Header buttons layout */
+.header {
+    margin: 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Contact list layout */
+.contacts-list {
+    margin: 20px;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Contact items */
+.contact-item {
+    margin-bottom: 16px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.contact-item:hover {
+    background-color: #e6f7ff;
+}
+
+/* No contacts message */
+.no-contacts {
+    text-align: center;
+    font-size: 16px;
+    color: #888;
+}
+
+/* Search bar container */
+.search-container {
+    margin: 20px;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: #0070d2;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+    text-decoration-color: black;
+}
